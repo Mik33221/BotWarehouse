@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/warehouse
+      - SPRING_DATASOURCE_USERNAME=robot_user
+      - SPRING_DATASOURCE_PASSWORD=robot_pass
+      - REDIS_HOST=redis
+    # depends_on:
+    #   - postgres
+    #   - redis
+    networks:
+      - appnet
+
+  # frontend:
+  #   build: ./frontend
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - appnet
+
+  # postgres:
+  #   image: postgres:15
+  #   restart: always
+  #   environment:
+  #     POSTGRES_DB: warehouse
+  #     POSTGRES_USER: robot_user
+  #     POSTGRES_PASSWORD: robot_pass
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - appnet
+
+  # redis:
+  #   image: redis:7
+  #   restart: always
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - appnet
+
+networks:
+  appnet:
