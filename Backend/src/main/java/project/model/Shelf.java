@@ -6,14 +6,12 @@ import java.util.List;
 public class Shelf {
     private static int count = 0;
     private int id;
-    private int x, y;
+    private Cord cord;
     private List<Item> items;
 
-    public Shelf(int x, int y) {
+    public Shelf() {
         this.id = count++;
         this.items = new ArrayList<Item>();
-        this.x = x;
-        this.y = y;
     }
 
     public boolean hasItem(String type) {
@@ -36,23 +34,15 @@ public class Shelf {
         return 1;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public int getID(){
         return id;
     }
 
-    public int getX() {
-        return x;
+    public void setCord(Cord cord) {
+        this.cord = cord;
     }
 
-    public int getY() {
-        return y;
+    public Cord getCord() {
+        return cord;
     }
 }
