@@ -10,7 +10,7 @@ public class WebSocketController {
     @MessageMapping("/state")
     @SendTo("/topic/grid")
     public String sendCurrentState() {
-        // TODO: Replace with actual state serialization
-        return "{\"status\":\"ok\"}";
+        // TODO: zwróć aktualny stan całości aplikacji jako JSON
+        return "{}";
     }
 }

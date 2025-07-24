@@ -2,7 +2,7 @@ package project.model;
 
 import java.util.ArrayList;
 
-public class Shelf {
+public class Shelf implements GridEntity {
     private static int count = 0;
     private int id;
     private Cord cord;

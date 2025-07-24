@@ -1,6 +1,6 @@
 package project.model;
 
-public class Robot {
+public class Robot implements GridEntity {
     private static int count = 0;
     private int id;
     private Cord cord;
