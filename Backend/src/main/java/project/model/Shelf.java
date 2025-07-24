@@ -1,13 +1,12 @@
 package project.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Shelf {
     private static int count = 0;
     private int id;
     private Cord cord;
-    private List<Item> items;
+    private ArrayList<Item> items;
 
     public Shelf() {
         this.id = count++;
