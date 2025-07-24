@@ -1,4 +1,4 @@
-package project.backend;
+package project.model;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
