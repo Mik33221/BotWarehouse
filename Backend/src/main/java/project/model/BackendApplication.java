@@ -4,6 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import project.simulation.SimulationEngine;
 import project.view.WarehousePrinter;
 
 @SpringBootApplication
@@ -27,11 +28,16 @@ public class BackendApplication {
         s1.setCord(new Cord(4,3));
         s2.setCord(new Cord(4,4));
 
+        SimulationEngine simEngine = new SimulationEngine(warehouse);
+        Thread simThread = new Thread(simEngine);
+        simThread.start();
     }
+
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
     }
+
     @GetMapping("/grid")
     public String grid() {
         String out = printer.stringify(warehouse);
