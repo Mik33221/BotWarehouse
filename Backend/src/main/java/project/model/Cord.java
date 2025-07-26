@@ -9,6 +9,14 @@ public class Cord {
         this.y = y;
     }
 
+    public Cord add(Cord other) {
+        return new Cord(this.x + other.x, this.y + other.y);
+    }
+
+    public Cord subtract(Cord other) {
+        return new Cord(this.x - other.x, this.y - other.y);
+    }
+
     public int getX() {
         return x;
     }
@@ -16,4 +24,6 @@ public class Cord {
     public int getY() {
         return y;
     }
+
+
 }
