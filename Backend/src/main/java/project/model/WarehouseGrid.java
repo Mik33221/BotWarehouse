@@ -22,7 +22,7 @@ public class WarehouseGrid {
     }
 
     public Robot addRobot(){
-        Robot robot = new Robot();
+        Robot robot = new Robot(this);
         robots.add(robot);
         return robot;
     }
