@@ -11,7 +11,7 @@ public class OrderController {
 
     @PostMapping
     public Order placeOrder(@RequestBody List<String> itemTypes) {
-        // TODO
+        // TODO: Order recieving
         return null;
     }
 }
