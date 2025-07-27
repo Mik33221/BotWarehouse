@@ -1,6 +1,5 @@
 package project.simulation;
 
-import project.api.WebSocketController;
 import project.model.Robot;
 import project.model.WarehouseGrid;
 
@@ -8,19 +7,15 @@ public class SimulationEngine implements Runnable {
     private WarehouseGrid warehouse;
     private OrderService orderService;
     private boolean running = true;
-    private WebSocketController webSocket;
-
 
     public SimulationEngine(WarehouseGrid warehouse) {
         this.warehouse = warehouse;
-        this.webSocket = new WebSocketController(warehouse);
     }
 
     @Override
     public void run() {
         while (running) {
             tick();
-            broadcastState();
 
             try {
                 Thread.sleep(1000); // simulate tick rate (e.g., 10 per second)
@@ -37,7 +32,4 @@ public class SimulationEngine implements Runnable {
         }
     }
 
-    public void broadcastState() {
-        webSocket.sendCurrentState();
-    }
 }
