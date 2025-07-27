@@ -13,6 +13,10 @@ public class Shelf implements GridEntity {
         this.items = new ArrayList<Item>();
     }
 
+    public boolean hasAnyItem(){
+        return items.size() > 0;
+    }
+
     public boolean hasItem(String type) {
         return items.stream().anyMatch(item -> item.getType().equals(type));
     }
@@ -33,7 +37,7 @@ public class Shelf implements GridEntity {
         return 1;
     }
 
-    public int getID(){
+    public int getId(){
         return id;
     }
 

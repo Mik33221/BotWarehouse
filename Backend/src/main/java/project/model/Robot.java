@@ -66,7 +66,11 @@ public class Robot implements GridEntity {
         return cord;
     }
 
-    public int getID(){
+    public int getId(){
         return id;
+    }
+
+    public boolean isCarrying(){
+        return carrying;
     }
 }

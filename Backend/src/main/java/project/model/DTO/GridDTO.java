@@ -8,9 +8,6 @@ public class GridDTO {
     private List<RobotDTO> robots;
     private List<ShelfDTO> shelves;
 
-    public GridDTO() {
-    }
-
     public GridDTO(int width, int height, List<RobotDTO> robots, List<ShelfDTO> shelves) {
         this.width = width;
         this.height = height;
@@ -22,15 +19,15 @@ public class GridDTO {
         return robots;
     }
 
-    public void setRobots(List<RobotDTO> robots) {
-        this.robots = robots;
-    }
-
     public List<ShelfDTO> getShelves() {
         return shelves;
     }
 
-    public void setShelves(List<ShelfDTO> shelves) {
-        this.shelves = shelves;
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }

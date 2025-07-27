@@ -3,40 +3,31 @@ package project.model.DTO;
 import project.model.Cord;
 
 public class ShelfDTO {
-    private String id;
-    private Cord cord;
+    private int id;
+    private int x;
+    private int y;
     private boolean occupied;
 
-    public ShelfDTO() {
-    }
-
-    public ShelfDTO(String id, Cord cord, boolean occupied) {
+    public ShelfDTO(int id, Cord cord, boolean occupied) {
         this.id = id;
-        this.cord = cord;
+        this.x = cord.getX();
+        this.y = cord.getY();
         this.occupied = occupied;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public int getX() {
+        return x;
     }
 
-    public Cord getCord() {
-        return cord;
-    }
-
-    public void setCord(Cord cord) {
-        this.cord = cord;
+    public int getY() {
+        return y;
     }
 
     public boolean isOccupied() {
         return occupied;
-    }
-
-    public void setOccupied(boolean occupied) {
-        this.occupied = occupied;
     }
 }

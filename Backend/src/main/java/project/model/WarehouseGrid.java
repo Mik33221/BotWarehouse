@@ -1,6 +1,12 @@
 package project.model;
 
+import project.model.DTO.GridDTO;
+import project.model.DTO.RobotDTO;
+import project.model.DTO.ShelfDTO;
+
+import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class WarehouseGrid {
     private int width;
@@ -41,5 +47,18 @@ public class WarehouseGrid {
 
     public int getHeight() {
         return height;
+    }
+
+    public GridDTO getGridDTO(){
+
+        List<RobotDTO> robotDTOs = robots.stream()
+                .map(robot -> new RobotDTO(robot.getId(), robot.getCord(), robot.isCarrying()))
+                .collect(Collectors.toList());
+
+        List<ShelfDTO> shelfDTOs = shelves.stream()
+                .map(shelf -> new ShelfDTO(shelf.getId(), shelf.getCord(), shelf.hasAnyItem()))
+                .collect(Collectors.toList());
+
+        return new GridDTO(width, height, robotDTOs, shelfDTOs);
     }
 }

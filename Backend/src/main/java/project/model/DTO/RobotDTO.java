@@ -3,40 +3,31 @@ package project.model.DTO;
 import project.model.Cord;
 
 public class RobotDTO {
-    private String id;
-    private Cord cord;
-    private boolean carryingItem;
+    private int id;
+    private int x;
+    private int y;
+    private boolean carrying;
 
-    public RobotDTO() {
-    }
-
-    public RobotDTO(String id, Cord cord, boolean carryingItem) {
+    public RobotDTO(int id, Cord cord, boolean carrying) {
         this.id = id;
-        this.cord = cord;
-        this.carryingItem = carryingItem;
+        this.x = cord.getX();
+        this.y = cord.getY();
+        this.carrying = carrying;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public int getX() {
+        return x;
     }
 
-    public Cord getCord() {
-        return cord;
+    public int getY() {
+        return y;
     }
 
-    public void setCord(Cord cord) {
-        this.cord = cord;
-    }
-
-    public boolean isCarryingItem() {
-        return carryingItem;
-    }
-
-    public void setCarryingItem(boolean carryingItem) {
-        this.carryingItem = carryingItem;
+    public boolean isCarrying() {
+        return carrying;
     }
 }
