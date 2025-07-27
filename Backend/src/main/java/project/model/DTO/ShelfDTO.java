@@ -30,4 +30,14 @@ public class ShelfDTO {
     public boolean isOccupied() {
         return occupied;
     }
+
+    @Override
+    public String toString() {
+        return "ShelfDTO{" +
+                "id=" + id +
+                ", x=" + x +
+                ", y=" + y +
+                ", occupied=" + occupied +
+                '}';
+    }
 }

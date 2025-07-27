@@ -30,4 +30,14 @@ public class GridDTO {
     public int getHeight() {
         return height;
     }
+
+    @Override
+    public String toString() {
+        return "GridDTO{" +
+                "width=" + width +
+                ", height=" + height +
+                ", robots=" + robots +
+                ", shelves=" + shelves +
+                '}';
+    }
 }

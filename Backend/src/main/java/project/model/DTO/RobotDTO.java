@@ -30,4 +30,14 @@ public class RobotDTO {
     public boolean isCarrying() {
         return carrying;
     }
+
+    @Override
+    public String toString() {
+        return "RobotDTO{" +
+                "id=" + id +
+                ", x=" + x +
+                ", y=" + y +
+                ", carrying=" + carrying +
+                '}';
+    }
 }
