@@ -1,3 +1,5 @@
+## About
+This project was developed as a practice, to explore SpringBoot and React libraries.
 
 ## Architecture
 
