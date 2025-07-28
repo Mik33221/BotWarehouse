@@ -1,6 +1,7 @@
 package project.model;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,13 +11,14 @@ import project.view.WarehousePrinter;
 
 @SpringBootApplication
 @RestController
+@CrossOrigin("*")
 public class BackendApplication {
     private static WarehouseGrid warehouse;
     private static WarehousePrinter printer;
 
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);
-        warehouse = new WarehouseGrid(6,6);
+        warehouse = new WarehouseGrid(10,10);
         printer = new WarehousePrinter();
 
         Robot r1 = warehouse.addRobot();
@@ -39,7 +41,7 @@ public class BackendApplication {
         return String.format("Hello %s!", name);
     }
 
-    @GetMapping("/gridDTO")
+    @GetMapping("/api/grid-dto")
     public GridDTO gridDTO() {
         return warehouse.getGridDTO();
     }
